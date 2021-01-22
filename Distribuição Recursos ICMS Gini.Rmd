@@ -1,0 +1,54 @@
+---
+title: "Distribuição repasse ICMS"
+author: "Otávio Alves"
+date: "22/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r}
+install.packages('ineq')
+library(ineq)
+install.packages('readxl')
+library(readxl)
+install.packages('stringr')
+library(stringr)
+
+```
+
+Carregando a base de dados e observando os valores.
+
+
+```{r}
+df = read_excel("C:/Users/otavi/Documents/CAMG/Tabelas CAMG/Tabelas Finais CAMG/Nota_Todos_Anos.xlsx")
+summary(df)
+
+```
+
+
+Calculando o Gini.
+
+```{r}
+
+gini= ineq(df$Nota_Final_Total , type = 'Gini')
+
+print(gini)
+
+
+```
+
+
+```{r}
+titulo = str_glue('O Índice de Gini do ICMS esportivo, de 2009 a 2018, é: {gini}')
+plot(Lc(df$Nota_Final_Total), 
+     main = "Distribuição dos Recursos do ICMS",
+     xlab = titulo)
+
+```
+

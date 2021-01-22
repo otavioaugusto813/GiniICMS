@@ -5,19 +5,15 @@ date: "22/01/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## R Markdown
 
 
-```{r}
-install.packages('ineq')
+```{r pressure, echo=FALSE}
+install.packages('ineq', repos="http://cran.us.r-project.org")
 library(ineq)
-install.packages('readxl')
+install.packages('readxl', repos="http://cran.us.r-project.org")
 library(readxl)
-install.packages('stringr')
+install.packages('stringr', repos="http://cran.us.r-project.org")
 library(stringr)
 
 ```

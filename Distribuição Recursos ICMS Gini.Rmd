@@ -2,13 +2,18 @@
 title: "Distribuição repasse ICMS"
 author: "Otávio Alves"
 date: "22/01/2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ## R Markdown
 
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
 
-```{r pressure, echo=FALSE}
+```{r echo = T, results = 'hide'}
 install.packages('ineq', repos="http://cran.us.r-project.org")
 library(ineq)
 install.packages('readxl', repos="http://cran.us.r-project.org")
